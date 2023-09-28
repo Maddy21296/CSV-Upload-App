@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
-require('dotenv').config()
+const dotenv = require('dotenv');
 
-mongoose.connect(`mongodb://localhost:27017/CSV-UploadApp`);
+dotenv.config({ path: 'config.env' });
+
+mongoose.connect(process.env.DB);
 // mongoose.connect(process.env.mongooseUrl);
 const db = mongoose.connection;
 
